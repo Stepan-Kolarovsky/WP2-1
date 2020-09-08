@@ -20,16 +20,18 @@ if (isset ($submit)) { ?>
     <?php
 }    else {  ?>   
     <form action="index.php" method="post">
-        Typ vozidla:<select name="auta" id="auta">
-     <option value="osobní">osobní</option>
-     <option value="nákladní">nákladní</option>
-     <option value="autobus">autobus</option>
-     <option value="karavan">karavan</option>
-     <option value="trolejbus">trolejbus</option>
-    </select> 
-    <br>
-SPZ   
-   <input type="text" name="spz"><br>
+      Typ vozidla:<select name="auta" id="auta">
+      <?php foreach ($types as $type) { ?>
+        <option value="<?= $type ?>"><?= $type ?> </option>        
+     <?php 
+    } ?>
+      
+     
+    
+ 
+ </select> 
+    <br> 
+   SPZ<input type="text" name="spz"><br>
    <input type="submit" name="submit" value="odeslat">
 </form>
 <?php
